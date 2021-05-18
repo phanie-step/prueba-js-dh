@@ -23,9 +23,9 @@ exports.filtrarTareasPorEstado = function (estado) {
         En esta función debes de leer las tareas y retornar las que tengan el estado que se
         manda en el parametro.
     */
-   const listado = leerTareas();
+   const listado = agregarTarea();
    for(let i=0; i<listado.length; i++){
-       if(leer.status == estado){
+       if(listado[i].status == estado){
            return 'titulo: ${listado[i].titulo} status: ${listado[i].status}';
        }
    }
