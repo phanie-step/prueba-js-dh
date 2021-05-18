@@ -1,8 +1,8 @@
-const {leerTareas, filtrarTareasPorEstado, agregarTarea} = require('./app.js');
-const {writeFileSync} = require('fs');
+const { leerTareas, filtrarTareasPorEstado, agregarTarea } = require('./app.js');
+const { writeFileSync } = require('fs');
 
 (function () {
-    writeFileSync('./tareas.json','[]');
+    writeFileSync('./tareas.json', '[]');
     const tempData = [
         {
             titulo: 'tarea 1',
@@ -16,7 +16,7 @@ const {writeFileSync} = require('fs');
     agregarTarea(tempData[0]);
     agregarTarea(tempData[1]);
     const respuesta = leerTareas();
-    if (!respuesta.length || respuesta.length !== 2 ) {
+    if (!respuesta.length || respuesta.length !== 2) {
         console.error(`error: leyendo o escribiendo tareas, esperando: ${JSON.stringify(tempData)}, resultado: ${JSON.stringify(respuesta)}`);
         return;
     }
