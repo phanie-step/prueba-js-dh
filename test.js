@@ -10,7 +10,7 @@ const { writeFileSync } = require('fs');
         },
         {
             titulo: 'tarea 2',
-            estatus: 'terminada'
+            status: 'terminada'
         }
     ];
     agregarTarea(tempData[0]);
@@ -24,12 +24,14 @@ const { writeFileSync } = require('fs');
     const respuestaFiltrado1 = filtrarTareasPorEstado('pendiente');
     const respuestaFiltrado2 = filtrarTareasPorEstado('terminada');
 
-    if (respuestaFiltrado1[0].nombre !== tempData[0].nombre) {
+    console.log({respuestaFiltrado1, respuestaFiltrado2})
+
+    if (respuestaFiltrado1[0].titulo !== tempData[0].titulo) {
         console.error(`error obteniendo tareas filtradas por estado, esperando ${JSON.stringify([tempData[0]])}, resultado: ${JSON.stringify(respuestaFiltrado1)}`);
         return;
     }
 
-    if (respuestaFiltrado2[0].nombre !== tempData[1].nombre) {
+    if (respuestaFiltrado2[0].titulo !== tempData[1].titulo) {
         console.error(`error obteniendo tareas filtradas por estado, esperando ${JSON.stringify([tempData[1]])}, resultado: ${JSON.stringify(respuestaFiltrado2)}`);
         return;
     }
