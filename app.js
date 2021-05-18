@@ -6,18 +6,16 @@
            * pendiente
          )
 */
-
-exports.leerTareas = {
-    path: 'tareas.json',
-    leer: function(){
-        const leerTareas = fs.readFileSync(this.path, 'utf8');
-        return JSON.parse(leerTareas);
-    }      
+const fs = require('fs');
+exports.leerTareas = function (){
+    //path: 'tareas.json',
+    const leer = fs.readFileSync('./tareas.json', 'utf8');
+    return JSON.parse(leer);   
 }
 
 exports.agregarTarea = function (tarea) {
-
-    
+    const agregarTarea = JSON.stringify(tarea);
+    return agregarTarea;
 }
 
 exports.filtrarTareasPorEstado = function (estado) {
