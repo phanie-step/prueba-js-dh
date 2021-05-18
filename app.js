@@ -8,9 +8,11 @@
 */
 
 exports.leerTareas = function () {
-    /*
-        En esta función debes leer y retornar las tareas registradas.
-    */
+    path: 'tareas.json',
+    leer: function(){
+        const leerTareas = fs.readFileSync(this.path, 'utf8')
+        return JSON.parse(leerTareas)
+    }      
 }
 
 exports.agregarTarea = function (tarea) {
