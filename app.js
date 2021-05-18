@@ -7,18 +7,17 @@
          )
 */
 
-exports.leerTareas = function () {
+exports.leerTareas = {
     path: 'tareas.json',
     leer: function(){
-        const leerTareas = fs.readFileSync(this.path, 'utf8')
-        return JSON.parse(leerTareas)
+        const leerTareas = fs.readFileSync(this.path, 'utf8');
+        return JSON.parse(leerTareas);
     }      
 }
 
 exports.agregarTarea = function (tarea) {
-    /*
-        Registra y guarda una nueva tarea.
-    */
+
+    
 }
 
 exports.filtrarTareasPorEstado = function (estado) {
