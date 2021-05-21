@@ -13,8 +13,8 @@ exports.leerTareas = function (){
     return JSON.parse(leer);   
 }
 
-exports.agregarTarea = function (tarea) {
-    const agregarTarea = JSON.stringify(tarea);
+exports.agregarTarea = function (tempData) {
+    const agregarTarea = [JSON.stringify(tempData[0]), JSON.stringify[1]];
     return agregarTarea;
 }
 
@@ -23,11 +23,13 @@ exports.filtrarTareasPorEstado = function (estado) {
         En esta función debes de leer las tareas y retornar las que tengan el estado que se
         manda en el parametro.
     */
-   const listado = agregarTarea();
+   const listado = leerTareas();
    for(let i=0; i<listado.length; i++){
        if(listado[i].status == estado){
            return 'titulo: ${listado[i].titulo} status: ${listado[i].status}';
        }
+       else{
+           return undefined;
+       }
    }
-
 }
